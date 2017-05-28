@@ -1,0 +1,294 @@
+.main-menu,
+.main-menu * {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	position: relative;
+	cursor: pointer;
+}
+.main-menu {
+	z-index: 9999;
+	background: rgb(66, 133, 244);
+	box-shadow: 0 10px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+	font-size: 0;
+	line-height: 0;
+	text-align: right;
+	position: fixed;
+	width: 100vw;
+	top: 0;
+}
+.main-menu:after {
+	content: '';
+	display: table;
+	clear: both;
+}
+.main-menu li {
+	display: inline-block;
+	float: left;
+	padding: 5px;
+	border-style: solid;
+	border-color: rgba(0, 0, 0, .1);
+	border-right-width: 1px;
+	font-size: 13px;
+	line-height: 45px;
+	text-align: left;
+	white-space: nowrap;
+}
+.main-menu li a {
+	display: block;
+	padding: 0 20px;
+	text-decoration: none;
+	color: #FFFFFF;
+	font-size: 16px;
+	transition: background 0.4s, color 0.4s;
+	-o-transition: background 0.4s, color 0.4s;
+	-ms-transition: background 0.4s, color 0.4s;
+	-moz-transition: background 0.4s, color 0.4s;
+	-webkit-transition: background 0.4s, color 0.4s;
+}
+.main-menu li > div {
+	position: absolute;
+	z-index: 1000;
+	top: 100%;
+	left: -9999px;
+	margin-top: 8px;
+	background: rgb(66, 133, 244);
+	box-shadow: 0 0 8px rgba(0, 0, 0, .3);
+	opacity: 0;
+	transform-origin: 0% 0%;
+	-o-transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	-moz-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
+	transition: -o-transform 0.4s, opacity 0.4s;
+	-o-transition: -o-transform 0.4s, opacity 0.4s;
+	-ms-transition: -ms-transform 0.4s, opacity 0.4s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.4s;
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.4s;
+}
+.main-menu li > div:after {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 0;
+	width: 100%;
+	height: 8px;
+	background: transparent;
+}
+.main-menu li > div:before {
+	content: '';
+	position: absolute;
+	bottom: 100%;
+	left: 20%;
+	border-right: 5px solid transparent;
+	border-bottom: 5px solid rgb(66, 133, 244);
+	border-left: 5px solid transparent;
+}
+.main-menu li:hover > a,
+.main-menu li.current > a {
+	background: #2da5da;
+	color: #fff;
+}
+.main-menu li:hover > div {
+	left: 0;
+	opacity: 1;
+	transform: translate(0, 0);
+	-o-transform: translate(0, 0);
+	-moz-transform: translate(0, 0);
+	-webkit-transform: translate(0, 0);
+}
+.main-menu .right {
+	float: none;
+	border-right-width: 0;
+	border-left-width: 1px;
+}
+.main-menu .right > div {
+	-o-transform-origin-x: 100%;
+	-ms-transform-origin-x: 100%;
+	-moz-transform-origin-x: 100%;
+	-webkit-transform-origin-x: 100%;
+}
+.main-menu .right:hover > div {
+	right: 0;
+	left: auto;
+}
+.main-menu .right:hover > div:before {
+	right: 24px;
+	left: auto;
+}
+.main-menu li li {
+	display: block;
+	float: none;
+	border-width: 0;
+	border-top-width: 1px;
+	line-height: 21px;
+	white-space: normal;
+}
+.main-menu li li:first-child {
+	border-top: 0;
+}
+.main-menu li li a {
+	padding-top: 12px;
+	padding-bottom: 12px;
+}
+.main-menu li li > div {
+	top: 0;
+	margin: 0 0 0 8px;
+}
+.main-menu li li > div:after {
+	top: 0;
+	right: 100%;
+	bottom: auto;
+	left: auto;
+	width: 8px;
+	height: 100%;
+}
+.main-menu li li > div:before {
+	top: 22px;
+	right: 100%;
+	bottom: auto;
+	left: auto;
+	border-top: 5px solid transparent;
+	border-right: 5px solid rgba(255, 255, 255, 0.9);
+	border-bottom: 5px solid transparent;
+}
+.main-menu li li:hover > div {
+	left: 100%;
+}
+.main-menu .right li > div {
+	margin: 0 8px 0 0;
+	-o-transform-origin-x: 100%;
+	-ms-transform-origin-x: 100%;
+	-moz-transform-origin-x: 100%;
+	-webkit-transform-origin-x: 100%;
+}
+.main-menu .right li > div:after {
+	right: auto;
+	left: 100%;
+}
+.main-menu .right li > div:before {
+	right: auto;
+	left: 100%;
+	border-right: none;
+	border-left: 5px solid rgba(255, 255, 255, 0.9);
+}
+.main-menu .right li:hover > div {
+	right: 100%;
+	left: auto;
+}
+.main-menu-animation {
+	perspective: 2000px;
+	-o-perspective: 2000px;
+	-moz-perspective: 2000px;
+	-webkit-perspective: 2000px;
+}
+.main-menu-animation li > div {
+	z-index: 0;
+	animation-duration: 0.4s;
+	-o-animation-duration: 0.4s;
+	-moz-animation-duration: 0.4s;
+	-webkit-animation-duration: 0.4s;
+	animation-timing-function: ease-in-out;
+	-o-animation-timing-function: ease-in-out;
+	-moz-animation-timing-function: ease-in-out;
+	-webkit-animation-timing-function: ease-in-out;
+}
+.main-menu-animation li:hover > div {
+	animation-name: slideDown;
+	-o-animation-name: slideDown;
+	-moz-animation-name: slideDown;
+	-webkit-animation-name: slideDown;
+}
+@keyframes slideDown {
+	0% {
+		transform: rotateX(-90deg);
+		-o-transform: rotateX(-90deg);
+		-moz-transform: rotateX(-90deg);
+		-webkit-transform: rotateX(-90deg);
+	}
+}
+@-o-keyframes slideDown {
+	0% {
+		transform: rotateX(-90deg);
+		-o-transform: rotateX(-90deg);
+		-moz-transform: rotateX(-90deg);
+		-webkit-transform: rotateX(-90deg);
+	}
+}
+@-moz-keyframes slideDown {
+	0% {
+		transform: rotateX(-90deg);
+		-o-transform: rotateX(-90deg);
+		-moz-transform: rotateX(-90deg);
+		-webkit-transform: rotateX(-90deg);
+	}
+}
+@-webkit-keyframes slideDown {
+	0% {
+		transform: rotateX(-90deg);
+		-o-transform: rotateX(-90deg);
+		-moz-transform: rotateX(-90deg);
+		-webkit-transform: rotateX(-90deg);
+	}
+}
+.main-menu .main-menu-child {
+	float: left;
+	border-color: #d9d9d9;
+	border-left-width: 1px;
+	border-left-style: solid;
+	width: 233px;
+}
+/**/
+/* icons */
+/**/
+
+.main-menu li a > .menu {
+	width: 16px;
+	margin: 0px;
+	font-size: 16px;
+	// line-height: inherit;
+	text-align: center;
+	vertical-align: sub;
+}
+.main-menu li a > .menu-text {
+	vertical-align: middle;
+	padding-left: 10px;
+}
+/**/
+/* Responsive style for mobile devices
+/**/
+
+@media screen and (max-width: 500px) {
+	.main-menu-icons li {
+		position: static;
+		font-size: 0;
+	}
+	.main-menu-icons li a {
+		padding: 0 20px;
+	}
+	.main-menu-icons li > div,
+	.main-menu-icons li > [class^="grid-container"] {
+		width: 100%;
+	}
+	.main-menu-icons li li {
+		position: relative;
+		font-size: 13px;
+	}
+	.main-menu-icons li li > div,
+	.main-menu-icons .right li > div {
+		top: 100%;
+		margin: 8px 0 0 0;
+	}
+	.main-menu-icons li li > div:after,
+	.main-menu-icons .right li > div:after {
+		top: auto;
+		right: auto;
+		bottom: 100%;
+		left: 0;
+		width: 100%;
+		height: 8px;
+	}
+	.menu-text {
+		display: none;
+	}
+}
